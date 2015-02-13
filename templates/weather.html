@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="static/js/jquery-1.11.2.min.js"></script>
+    <script src="http://maps.googleapis.com/maps/api/js"></script>
+    <script src="static/js/weather.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/bootstrap-theme.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<div class="container">
+    <div class="page-header">
+        <h1>UK Weather Finder</h1>
+    </div>
+    <div class="well">
+        <p>Enter your location below and hit search, or click "What's the weather outside?" to let Weather Finder figure out where you are!</p>
+        <div class="input-group">
+            <input type="text" id="search_field" class="form-control" value="" placeholder="e.g. Edinburgh">
+            <span class="input-group-btn">
+                <button id="search_button" class="btn btn-primary">Search</button>
+                <button id="btnInit" class="btn btn-default">What's the weather outside?</button>
+            </span>
+        </div>
+    </div>
+    <div id="data" class="alert alert-info" role="alert">
+        <p>You are near <span id="location"></span>.</p>
+        <p>The overhead conditions are <span id="weather"></span> and the temperature is <span id="temp"></span>&deg;C.</p>
+    </div>
+</div>
+</body>
+</html>
