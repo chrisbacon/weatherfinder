@@ -20,7 +20,6 @@ class weather:
 
         for i in range(1):
             y = metoffer.parse_val(x)
-            print y.name, y.data[0]['timestamp'], y.data[1]['timestamp']
             json_dict = {'location': str(y.name + ', ' + y.country),
                          'weather': metoffer.WEATHER_CODES[y.data[0]["Weather Type"][0]],
                          'temp': y.data[0]["Temperature"][0]}
