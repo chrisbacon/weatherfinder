@@ -14,15 +14,13 @@ function handle_geolocation_query(position){
 
 function get_weather_report(lng, lat){
     $("div#data").hide()
-    jQuery.post("/weather",
+    jQuery.post("/data",
     {
         lng: lng,
         lat: lat
     },
     function(data){
-        $.each(data, function(index, value) {
-            $("span#" + index).text(value)
-        });
+        $("div#data").html(data);
         $("div#data").fadeIn()
     })
     .fail(function() {
@@ -34,7 +32,7 @@ function get_weather_report(lng, lat){
 function search() {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode(
-        {'address': $('#search_field').val()},
+        {'address': $('#search_field').val() + ', UK'},
         function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 var loc = results[0].geometry.location;
